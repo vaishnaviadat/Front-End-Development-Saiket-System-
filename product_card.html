@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      width: 280px;
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 0.75rem;
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    .card p.price {
+      font-size: 1rem;
+      color: #28a745;
+      font-weight: bold;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .card button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+
+    .card button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="images/headphon.jpg" alt="Wireless Headphones">
+    <h2>Wireless Headphones</h2>
+    <p class="price">₹2,499</p>
+    <button>Add to Cart</button>
+  </div>
+
+</body>
+</html>
