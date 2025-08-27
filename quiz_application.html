@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .quiz-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 350px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    .options {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
+    #score {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h2 id="question">Question text</h2>
+    <div class="options">
+      <label><input type="radio" name="answer" value="a"> <span id="optionA"></span></label>
+      <label><input type="radio" name="answer" value="b"> <span id="optionB"></span></label>
+      <label><input type="radio" name="answer" value="c"> <span id="optionC"></span></label>
+      <label><input type="radio" name="answer" value="d"> <span id="optionD"></span></label>
+    </div>
+    <button id="nextBtn">Next</button>
+    <div id="score"></div>
+  </div>
+
+  <script>
+    // Questions data
+    const quizData = [
+      {
+        question: "Which language runs in a web browser?",
+        a: "Java",
+        b: "C",
+        c: "Python",
+        d: "JavaScript",
+        correct: "d"
+      },
+      {
+        question: "What does CSS stand for?",
+        a: "Central Style Sheets",
+        b: "Cascading Style Sheets",
+        c: "Cascading Simple Sheets",
+        d: "Cars SUVs Sailboats",
+        correct: "b"
+      },
+      {
+        question: "What does HTML stand for?",
+        a: "Hyper Trainer Marking Language",
+        b: "Hyper Text Marketing Language",
+        c: "Hyper Text Markup Language",
+        d: "Hyper Text Markup Leveler",
+        correct: "c"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    const questionEl = document.getElementById("question");
+    const optionA = document.getElementById("optionA");
+    const optionB = document.getElementById("optionB");
+    const optionC = document.getElementById("optionC");
+    const optionD = document.getElementById("optionD");
+    const nextBtn = document.getElementById("nextBtn");
+    const scoreEl = document.getElementById("score");
+
+    function loadQuestion() {
+      const currentQuiz = quizData[currentQuestion];
+      questionEl.innerText = currentQuiz.question;
+      optionA.innerText = currentQuiz.a;
+      optionB.innerText = currentQuiz.b;
+      optionC.innerText = currentQuiz.c;
+      optionD.innerText = currentQuiz.d;
+
+      // clear previous selection
+      document.querySelectorAll('input[name="answer"]').forEach(input => input.checked = false);
+    }
+
+    function getSelected() {
+      const answerEls = document.querySelectorAll('input[name="answer"]');
+      let selectedAnswer = null;
+      answerEls.forEach(answerEl => {
+        if (answerEl.checked) {
+          selectedAnswer = answerEl.value;
+        }
+      });
+      return selectedAnswer;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      const answer = getSelected();
+      if (!answer) {
+        alert("Please select an answer before continuing!");
+        return;
+      }
+
+      if (answer === quizData[currentQuestion].correct) {
+        score++;
+      }
+
+      currentQuestion++;
+
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.querySelector(".quiz-container").innerHTML = `
+          <h2>You scored ${score} out of ${quizData.length} 🎉</h2>
+        `;
+      }
+    });
+
+    loadQuestion(); // load first question
+  </script>
+</body>
+</html>
