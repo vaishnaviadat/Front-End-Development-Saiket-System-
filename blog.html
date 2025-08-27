@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Blog — The Joy of Learning</title>
+  <style>
+    :root{--bg:#f7f7f9;--card:#ffffff;--accent:#0d6efd;--muted:#6c757d}
+    body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#222; margin:0; padding:2rem}
+    .container{max-width:820px;margin:0 auto}
+    header.site-header{margin-bottom:1.25rem}
+    header.site-header h2{margin:0;font-size:.9rem;color:var(--muted)}
+
+    article.post{background:var(--card);border-radius:12px;padding:1.6rem;box-shadow:0 6px 20px rgba(20,20,30,0.05)}
+    .post-header{border-bottom:1px solid #eee;padding-bottom:.9rem;margin-bottom:1rem}
+    .post-header h1{margin:.1rem 0;font-size:1.6rem}
+    .meta{font-size:.9rem;color:var(--muted)}
+    .author{font-weight:600}
+
+    figure{margin:1rem 0;display:block}
+    figure img{width:100%;height:auto;border-radius:8px;display:block}
+    figcaption{font-size:.85rem;color:var(--muted);margin-top:.35rem}
+
+    section{line-height:1.6}
+    ul{margin-left:1.25rem}
+    .read-more{display:inline-block;margin-top:1rem;padding:.5rem .9rem;border-radius:999px;text-decoration:none;background:var(--accent);color:#fff}
+
+    footer.post-footer{border-top:1px solid #eee;margin-top:1.25rem;padding-top:.9rem;color:var(--muted);font-size:.9rem}
+
+    /* small screens */
+    @media (max-width:520px){body{padding:1rem}.post-header h1{font-size:1.3rem}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="site-header">
+      <h2>Thoughts & Stories</h2>
+    </header>
+
+    <article class="post" aria-labelledby="post-title">
+      <header class="post-header">
+        <h1 id="post-title">The Joy of Learning: Small Steps, Big Changes</h1>
+        <p class="meta">
+          <span class="author">By:Vaishnavi Adat</span>
+          &nbsp;•&nbsp;
+          <time datetime="2025-08-27">August 27, 2025</time>
+        </p>
+      </header>
+
+      <section class="introduction">
+        <h3>Introduction</h3>
+        <p>Learning is a journey made of small, steady steps. In this post I share simple ways to build a daily learning habit that actually sticks — whether you're learning a language, a new technology, or a creative skill.</p>
+      </section>
+
+      <section class="main-content">
+        <h3>Main ideas</h3>
+        <p>Start with a few clear, achievable practices. Here are practical steps you can try today:</p>
+        <ul>
+          <li>Set a short daily goal (10–20 minutes).</li>
+          <li>Practice actively — speak, write or build something, not just read.</li>
+          <li>Use tiny rewards to keep motivation high.</li>
+          <li>Review past work weekly to notice progress.</li>
+        </ul>
+
+        <figure>
+          <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop&s=placeholder" alt="Open notebook and a cup of tea on a desk" />
+          <figcaption>Quiet moments make great study time.</figcaption>
+        </figure>
+      </section>
+
+      <section class="conclusion">
+        <h3>Conclusion</h3>
+        <p>Small, consistent actions add up. Pick one tiny habit today and repeat it for a week — you'll be surprised how much you learn.</p>
+      </section>
+
+      <a class="read-more" href="#" aria-label="Read more about The Joy of Learning">Read More →</a>
+
+      <footer class="post-footer">
+        <p>Filed under: <strong>Learning</strong>, <strong>Self-improvement</strong></p>
+      </footer>
+    </article>
+
+  </div>
+</body>
+</html>
