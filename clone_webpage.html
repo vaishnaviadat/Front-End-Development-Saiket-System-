@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header */
+    header {
+      background: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('/images/SD_img2.jpg') no-repeat center center/cover;
+      color: black;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 10px 0 20px;
+    }
+
+    .hero button {
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      background: #FFC107;
+      color: #333;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background: #e0a800;
+    }
+
+    /* Features Section */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 40px 20px;
+      background: #f9f9f9;
+    }
+
+    .feature {
+      flex: 1 1 200px;
+      margin: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .feature h3 {
+      margin-top: 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Responsive */
+    @media(max-width: 768px){
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>MyCompany</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to MyCompany</h2>
+    <p>We provide amazing solutions for your business</p>
+    <button id="learnMoreBtn">Learn More</button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <div class="feature">
+      <h3>Fast Delivery</h3>
+      <p>Get your products delivered quickly and reliably.</p>
+    </div>
+    <div class="feature">
+      <h3>Secure Payments</h3>
+      <p>Safe and secure payment methods for every transaction.</p>
+    </div>
+    <div class="feature">
+      <h3>24/7 Support</h3>
+      <p>Our team is available around the clock to help you.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>&copy; 2025 MyCompany. All rights reserved.</p>
+    <p>Contact: info@mycompany.com</p>
+  </footer>
+
+  <script>
+    // Scroll to features section on button click
+    const learnMoreBtn = document.getElementById('learnMoreBtn');
+    learnMoreBtn.addEventListener('click', () => {
+      document.getElementById('features').scrollIntoView({behavior: 'smooth'});
+    });
+  </script>
+</body>
+</html>
